@@ -2,7 +2,7 @@
 #1번
 
 from tkinter import *
-player="X"
+player="Xy"
 list1=[]
 def checked(i):
     global player
