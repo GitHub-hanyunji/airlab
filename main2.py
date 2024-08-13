@@ -4,6 +4,7 @@
 from module2 import Rocket
 
 def main():
+    n=1
     myRocket=Rocket()
     print("로켓의 높이:",myRocket.y)
     myRocket.moveUp()
