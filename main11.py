@@ -1,11 +1,11 @@
 #main.py
-#2번
+#11번
 
-from module2 import *
 
+from module11 import *
 def main():
     t=T()
     t.play()
-
+    
 if __name__ == "__main__":
     main()

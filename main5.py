@@ -1,11 +1,11 @@
 #main.py
 #5번
 
-from module5 import Triangle
+from module5 import *
 
 def main():
-    triangle=Triangle(90,30,60)
-    print(triangle.checkAngles())
+    t=T()
+    t.play()
     
 if __name__ == "__main__":
     main()

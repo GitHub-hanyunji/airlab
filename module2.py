@@ -1,12 +1,13 @@
 #module.py
 #2번
 
+from tkinter import *
 #Rocket 클래스 정의
-class Rocket:
-    # 생성자
-    def __init__(self,x=0,y=0):
-        self.x=x
-        self.y=y
-    #로켓의 y좌표가 1만큼 증가
-    def moveUp(self):
-        self.y+=1
+class T:
+    def __init__(self):
+        self.window=Tk()
+        # label: 배경색=오렌지, 글자색=파랑
+        self.label=Label(self.window,text="Hello, I'm Label",fg='blue',bg='orange',width=50,height=3)
+    def play(self):
+        self.label.pack()
+        self.window.mainloop()

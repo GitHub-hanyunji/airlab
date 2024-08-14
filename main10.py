@@ -1,12 +1,11 @@
 #main.py
-#16번
+#10번
 
 
-from module10 import f
+from module10 import *
 def main():
-    st="abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMOPQRSTUVWXYZ!@#$%^&*()?"
-    passlen=8
-    f(st,passlen)
+    t=T()
+    t.play()
     
 if __name__ == "__main__":
     main()

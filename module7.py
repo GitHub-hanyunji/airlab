@@ -1,32 +1,26 @@
 #module.py
 #7번
+from tkinter import *
 
-# PhoneBook 클래스 정의
-class PhoneBook:
+class T:
     #생성자
     def __init__(self):
-        self.contacts={}
-        self.dic_count=0
-    # 연락처 정보를 문자열로 변환하는 함수
-    def __str__(self):
-        list1=[]
-        for x in self.contacts.values():
-            # 값이 있으면 list에 추가, 없으면 빈문자열 추가
-            list1.append(x.get('name')) if x.get('name') is not None else ' '
-            list1.append(f"moblie phone:\t{x.get('moblie')}") if x.get('moblie') is not None else ' '
-            list1.append(f"office phone:\t{x.get('office')}") if x.get('office') is not None else ' '
-            list1.append(f"email address:\t{x.get('email')}") if x.get('email') is not None else ' '
-            # 줄바꿈
-            list1.append('\n')
-        # 리스트를 줄바꿈으로 결합하여 반환
-        return '\n'.join(list1)
-    # 한 사람의 연락처를 추가하는 함수
-    def add(self,name,mobile=None,office=None,email=None):
-        # 연락처 정보 딕셔너리에 저장
-        self.contacts[self.dic_count]={
-            "name":name,
-            "moblie":mobile,
-            "office":office,
-            "email":email
-        }
-        self.dic_count+=1
+        self.window=Tk()
+        self.entry=Entry(self.window,width=20)
+        self.result_label=Label(self.window)
+    # 변환버튼이 눌리면 실행되는 메서드
+    def change(self):
+        # 입력필드에서 값 가져와 정수로 변환
+        inch_val=int(self.entry.get())
+        # 인치를 cm로 변환
+        result=inch_val*2.54
+        # 결과 label에 변환된 값 문자열로 설정
+        self.result_label['text']=str(result)
+    def play(self):
+        input_label=Label(self.window,text="인자를 입력하시오:").grid(row=0,column=0)
+        self.entry.grid(row=0,column=1)
+        result=Label(self.window,text="변환결과:").grid(row=1,column=0)
+        self.result_label.grid(row=1,column=1)
+        button=Button(self.window,text="변환!",command=self.change).grid(row=2,column=1)
+        self.window.mainloop()
+        

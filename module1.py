@@ -2,27 +2,15 @@
 #1번
 
 from tkinter import *
-player="Xy"
-list1=[]
-def checked(i):
-    global player
-    global list1
-    button=list1[i]
-    
-    if button["text"].strip():
-        return
-    button["text"]="     "+player+"      "
-    if player=="X":
-        player="O"
-        button["bg"]="yellow"
-    else:
-        player="X"
-        button["bg"]="lightgreen"
-        
-    
-    
-        
-    
-    
-    
-    
+
+class T:
+    def __init__(self):
+        self.window=Tk()
+        self.label=Label(self.window,text="Hi!") 
+        self.button=Button(self.window,text="click me",command=self.clicked)  
+    def play(self):
+        self.label.pack(side=LEFT)
+        self.button.pack(side=LEFT)    
+        self.window.mainloop() 
+    def clicked(self):
+        self.label['text']="cliked"
